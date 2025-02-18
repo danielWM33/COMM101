@@ -6,13 +6,13 @@ library(ggplot2)
 # Edit the following code so the outputs match the figures in the notes.
 
 # Figure 1
-ggplot(penguins, aes(bill_depth_mm)) +
+ggplot(penguins, aes(body_mass_g)) +
   geom_histogram()
 
 # Figure 2
-ggplot(penguins, aes(species, flipper_length_mm)) +
+ggplot(penguins, aes(y= species, x=flipper_length_mm)) +
   geom_boxplot()
 
 # Figure 3
 ggplot(penguins, aes(body_mass_g, flipper_length_mm, color = island)) +
-  geom_point()
+  geom_path()

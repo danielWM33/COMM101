@@ -1,15 +1,19 @@
 library(marinecs100b)
-
+?marinecs100b
 
 # Distributions of continuous variables -----------------------------------
 
 # P1 What type of visualization is appropriate for a single continuous variable?
+# line graph, making it very clear its one var
 
 # P2 What type of visualization is appropriate for a continuous variable across
 # categorical variables?
+# making clear which var is which, appropate scales for diff values
 
 # P3 Use ggplot to visualize the distribution of sea surface salinity. Save your
 # figure as “comm101p3.png”.
+
+View(woa_sal)
 
 # P4 Use ggplot to visualize the distribution of sea surface salinity by ocean
 # basin. Save your figure as “comm101p4.png”.
