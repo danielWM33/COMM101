@@ -5,10 +5,12 @@ library(ggplot2)
 # Distributions of continuous variables -----------------------------------
 
 # P1 What type of visualization is appropriate for a single continuous variable?
+
 # line graph, making it very clear its one var
 
 # P2 What type of visualization is appropriate for a continuous variable across
 # categorical variables?
+
 # making clear which var is which, appropate scales for diff values
 
 # P3 Use ggplot to visualize the distribution of sea surface salinity. Save your
@@ -41,17 +43,20 @@ ggsave("comm101p3.png")
 # P4 Use ggplot to visualize the distribution of sea surface salinity by ocean
 # basin. Save your figure as “comm101p4.png”.
 ggplot(woa_sal, aes(x = ocean, y= salinity)) + geom_boxplot()
+ggsave("comm101p4.png")
 
 
 # P5 Interpret your figures from P3 and P4. What patterns do you notice?
+
 # They both take into account the number of instances. They don't easily dissociate between
-  #individual points, no color
+# individual points, no color. They also do not differentiate between ocean in p3 vs p4.
 
 # P6 Critique your figures from P3 and P4. What changes would highlight the
 # patterns you interpreted in P5? You don’t need to write code for these
 # changes, just describe them verbally.
 
-# We could probably change colors, numbers, number of points
+# We could probably change colors, numbers, number of points. It's also not clear how many points
+# there are
 
 # Relationships between continuous variables ------------------------------
 
@@ -62,6 +67,8 @@ ggplot(woa_sal, aes(x = latitude, y= salinity, fill = ocean)) + geom_boxplot()
 # the following categories: visually differentiating the oceans, appropriateness
 # of the labels, or use of negative space. Save this figure as “comm101p8.png”.
 
-ggplot(woa_sal, aes(x = salinity, y= latitude, fill = ocean)) + geom_boxplot() + theme_bw() + labs(x = "Latitude", y = "Salinity (M)") + scale_fill_brewer(palette = "BuPu") +
-  theme(legend.position = c(0.2, 0.2))
+ggplot(woa_sal, aes(x = salinity, y= latitude, fill = ocean)) + geom_boxplot() + theme_bw() + labs(x = "Salinity (M)", y = "Latitude") + scale_fill_brewer(palette = "BuPu") +
+  labs(title="Salinity vs Ocean") +
+  theme(legend.position = c(0.2, 0.2), plot.title = element_text(hjust = 0.5))
+
 
